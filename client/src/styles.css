@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-canvas: #f6f8fb;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #eef2f7;
+  --color-line: #d8dee8;
+  --color-ink: #17202d;
+  --color-copy: #465365;
+  --color-muted: #596779;
+  --color-accent: #2459c7;
+  --color-accent-hover: #1949ad;
+  --color-accent-soft: #e8f0ff;
+  --color-on-accent: #ffffff;
+  --color-on-danger: #ffffff;
+  --color-success: #176b45;
+  --color-warning: #805400;
+  --color-danger: #b4232f;
+}
+
+:root {
+  color-scheme: light;
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  color: #17202d;
+  background: #f6f8fb;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-canvas: #101318;
+  --color-surface: #181d24;
+  --color-surface-subtle: #202731;
+  --color-line: #343d49;
+  --color-ink: #f0f3f8;
+  --color-copy: #b4bfce;
+  --color-muted: #a4afbf;
+  --color-accent: #8fb2ff;
+  --color-accent-hover: #b0c8ff;
+  --color-accent-soft: #222f47;
+  --color-on-accent: #101318;
+  --color-on-danger: #101318;
+  --color-success: #70d5a2;
+  --color-warning: #f0c36a;
+  --color-danger: #ff8d95;
+  color: #f0f3f8;
+  background: #101318;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  color: var(--color-ink);
+  background: var(--color-accent-soft);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+dialog::backdrop {
+  background: rgb(16 19 24 / 42%);
+  backdrop-filter: blur(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
